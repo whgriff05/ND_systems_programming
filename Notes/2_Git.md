@@ -34,3 +34,5 @@ Commands for branching
     - `--rebase` creates a commit that, instead of combining another branch's commit's into one, adds all commits to the end of that branch
 - `git switch -c <branch name>` to create and switch to the new branch
 - `git restore` to remove all unstaged changes and revert to the current last commit
+
+__Warning!__ If you switch branches, certain files may appear/disappear depending on which branches they are stored in
