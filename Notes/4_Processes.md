@@ -32,3 +32,12 @@ Notice `2>` sends STDERR somewhere else, it can be sent to another file, or `/de
 To end a process, you send it `SIGTERM` using `kill <pid>`
 
 To force-end a process, send it `SIGKILL` using `kill -9 <pid>`
+
+To cause a process to sleep, use `C-z` to sleep the process\
+`jobs` will list all jobs, including sleeping ones\
+You can kill a job using `kill %<job #>`\
+To run a sleeping job in the background, sleep it and use `bg`\
+To automatically start a job in the background, use a `&` at the end of the command
+
+You can use `pkill` to kill a named command, not using its pid (Ex: `pkill find` to kill all `find`s)
+
