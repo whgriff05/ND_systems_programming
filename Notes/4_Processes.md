@@ -20,7 +20,7 @@ Ex: `ls -la | tee ls.file`
 
 To compare differences in files, you can use `diff`\
 Ex: `diff <file1> <file2>`\
-_No output is good, that means there are no differences between files!_
+*No output is good, that means there are no differences between files!*
 
 Notice that `>` does not send STDERR to the file! To send STDERR to that file too, use `>&` (the modern way) or `> <file> 2>&1` (the old way; redirects STDOUT to file, redirects STDERR to wherever STDOUT is redirected to)\
 Notice `2>` sends STDERR somewhere else, it can be sent to another file, or `/dev/null` to be "trashed" (not shown)
