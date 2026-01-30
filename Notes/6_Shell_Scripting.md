@@ -20,3 +20,6 @@
 - `while` loops also run while a condition is true
     - when working with cmd-line arguments and while loops, we might want to use `shift` to move all cmd-line arguments forward one space (`$n+1` --> `$n`)
 - You can exit the script with an exit code by calling `exit <exitcode>`
+
+## Writing Clean Scripts - refer to `unit1/repeat.sh`
+- `while` and `case` are used to handle command line arguments
