@@ -51,3 +51,7 @@ Examples: \
 You set file permissions with the `chmod` command
 
 You can also shorthand some additions to a file: `+x` makes the file executable for yourself; for group/world you can do `(g/w)+x`. Just using `+x` only affects yourself because of a `umask` being set to not affect group/world perms. Otherwise, if no umask is set, user, group, and world perms will all be affected. (This also all works with `+r` and `+w`)
+
+## File Compressing with `tar`
+- Compress a folder into a package with `tar -cvzf <folder>.tar.gz <folder>`
+- Extract a package to a folder with `tar -xvzf <folder>.tar.gz`
