@@ -1,20 +1,46 @@
 #!/usr/bin/env python3
 
-def fizzbuzz(start=1, end=100):
+import sys
+
+def fizzbuzz(start: int=1, end: int=100) -> list[str]:
+    '''
+    Prints fizzbuzz from start to end
+
+    >>> fizzbuzz(1, 5)
+    ["1", "2", "Fizz", "4", "Buzz"]
+    '''
+    
+    results = []
+
     for i in range(start, end+1):
         if i % 3 == 0 and i % 5 == 0:
-            print("FizzBuzz")
+            results.append("FizzBuzz")
         elif i % 3 == 0:
-            print("Fizz")
+            results.append("Fizz")
         elif i % 5 == 0:
-            print("Buzz")
+            results.append("Buzz")
         else:
-            print(i)
+            results.append(f"{i}")
 
-fizzbuzz(9, 20)
-print()
-fizzbuzz(90)
-print()
-fizzbuzz(end=15)
-print()
-fizzbuzz()
+    return results
+
+def main(arguments=sys.argv[1:]):
+    '''
+    Print fizzbuzz from first two arguments
+
+    >>> main(['1', '5'])
+    1
+    2
+    Fizz
+    4
+    Buzz
+    '''
+    
+    start = int(arguments[0]) if len(arguments) >= 1 else 1
+    stop = int(arguments[1]) if len(arguments) >= 2 else 100
+
+
+    print("\n".join(fizzbuzz(start, stop)))
+
+if __name__ == "__main__":
+    main()
