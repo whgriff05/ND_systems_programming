@@ -26,6 +26,8 @@ Use `python3 -m doctest <filename>` to test all doctests in a file
 - `-v` for verbose (give result even if test passes)
 
 ## Command Line Arguments
+*refer to `fizzbuzz.py`*
+
 Gotten from the `sys` module (`import sys`), under the `sys.argv` list
 
 Usually you want to slice this array since `sys.argv[0]` includes the program name (usually use `arguments=sys.argv[1:]`)
@@ -41,3 +43,13 @@ This is called __static analysis__, code itself is not run, it is just parsed
 Recall C: `int x = (condition) ? (true) : (false);`
 
 Python Ternary: `x = (true) if (condition) else (false)`
+
+## I/O Information
+For files: `for line in open(<file>)`
+
+For processes: `for line in os.popen(<cmd>)`
+
+For the internet (using HTTP): `requests.get(<url>)`
+
+
+
