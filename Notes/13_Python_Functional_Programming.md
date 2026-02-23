@@ -1,6 +1,11 @@
 # Python Functional Programming
 *refer to `people.py`*
 
+In functional programming
+- Programs are compositions of functions
+- State is minimized and avoids side effects
+- Transforming streams of data, not the individual items themselves one-by-one
+
 ## Lambda Functions
 
 We can use the `lambda` statement to define a one-line function for temporary purposes
