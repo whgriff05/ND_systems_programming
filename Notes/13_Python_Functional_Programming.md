@@ -6,6 +6,8 @@ In functional programming
 - State is minimized and avoids side effects
 - Transforming streams of data, not the individual items themselves one-by-one
 
+Functional Programming implicitly adds __concurrency__ to programs
+
 ## Lambda Functions
 
 We can use the `lambda` statement to define a one-line function for temporary purposes
