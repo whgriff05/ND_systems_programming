@@ -37,6 +37,7 @@ Overall, we can safely call steps 1-3 "Compile" and 4 "Link"
 
 Executables can be __dynamically__ or __statically__ linked
 - __dynamic__: OS looks for the libraries at runtime
+    - to run a dynamic executable with a custom dynamic library, the path to the library has to be inclued in the `LD_LIBRARY_PATH` variable
 - __static__: libraries are pre-packaged with executable
 
 *Note: static executables are generally much larger than their dynmaic counterparts, however it can introduce issues with bugs or updates (think Log4j)*
