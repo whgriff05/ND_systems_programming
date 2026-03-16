@@ -54,3 +54,15 @@ Or, you can name rules (`make <rule>` in the shell)
 Use `ldd` to see what libraries a dynamic executable uses
 
 Use `strace` to see what system calls an executable uses
+
+## How can we compile libraries?
+
+1. Compile the `library.c` file to `library.o` with __gcc__ with the `-fPIC` flag (for the dynamic library)
+2. For the __dynamic__ version (`library.so`):
+    a. Use `gcc` to link it with the `-shared` flag
+    b. Create a "shared object" (`.so` file)
+3. For the __static__ version (`library.a`):
+    a. use `ar` to archive it with `rcs` flags
+    b. Create an archive (`.a` file)
+4. Then, use `gcc` to link another `.o` file with whichever library you want
+
