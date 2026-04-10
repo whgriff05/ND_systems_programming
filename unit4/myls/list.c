@@ -32,7 +32,10 @@ Node *  node_create(const char *path, size_t size) {
 }
 
 void    node_delete(Node *n) {
-    // TODO
+    if (!n) return;
+    node_delete(n->next);
+    free(n->path);
+    free(n);
 }
 
 /* List Structure */
@@ -66,7 +69,25 @@ void    add_files(const char *root, List *files) {
     }
 
     for (struct dirent *e = readdir(d); e; e = readdir(d)) {
-        printf("%s\n", e->d_name);
+        if (!strcmp(e->d_name, ".") || !strcmp(e->d_name, "..")) {
+            continue;
+        }
+
+        char path[BUFSIZ];
+        sprintf(path, "%s/%s", root, e->d_name);
+        struct stat s;
+        if (stat(path, &s)) {
+            fprintf(stderr, "stat(%s): %s\n", e->d_name, strerror(errno));
+            continue;
+        }
+
+        /*
+        if ((s.st_mode & S_IFMT) != S_IFREG) continue;
+
+        if (access(path, X_OK)) continue;
+        */
+
+        list_add(files, strdup(path), s.st_size);
     }
 
     closedir(d);
@@ -94,6 +115,7 @@ int main(int argc, char *argv[]) {
     print_files(&l);
 
     // TODO: Release resources
+    node_delete(l.head);
 
     return EXIT_SUCCESS;
 }
