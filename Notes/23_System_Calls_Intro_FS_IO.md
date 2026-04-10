@@ -30,6 +30,7 @@ A process requests a __service__ from the OS
     - Connect
 
 ## Files
+*refer to `list.c` and `check.c`*
 
 ### Inodes
 
@@ -40,5 +41,18 @@ Inodes store administrative data about files and directories
 - Timestamps
 - Direct Block --> Data Block
 
+### I/O
+
+All __input__ and __output__ is performed on files
+1. `open()`
+    - create handle to stream of data
+2. `close()`
+    - destory handle to stream of data
+3. `read()`
+    - retrieve chunk from stream of data
+4. `write()`
+    - append chunk to stream of data
+5. `seek()`
+    - move within stream of data
 
 
