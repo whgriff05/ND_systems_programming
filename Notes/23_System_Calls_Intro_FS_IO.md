@@ -42,10 +42,12 @@ Inodes store administrative data about files and directories
 - Direct Block --> Data Block
 
 ### I/O
+*refer to `copy.c`*
 
 All __input__ and __output__ is performed on files
 1. `open()`
-    - create handle to stream of data
+    - create handle to stream of data (file descriptor)
+    - use `fdopen()` to get a stream from a file descriptor
 2. `close()`
     - destory handle to stream of data
 3. `read()`
