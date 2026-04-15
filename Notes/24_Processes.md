@@ -7,11 +7,12 @@ A __process__ is a unit of __allocation__
 - Address Space
     - Code, data, heap, stack
 - Kernel State
-    - Permissions, file descriptors, etc.
+    - Permissions, file descriptors, exit status, etc.
 - Execution Context
     - Program counter, stack pointer, data registers
 
 ## Process Life Cycle
+*refer to `processes/`*
 
 __fork()__ allocates a new (EXACT COPY) process
 - but it is a __new process__ (new pid, ...)
@@ -38,3 +39,11 @@ __wait()__ retrieves a child's exit status
 
 `popen()` runs a command, opening up a stream with that command (like Python's `os.popen()`)
 - remember: use `pclose()` to close the process stream
+
+## Explaining the differences in exec()s
+
+`execl` family: takes a list of arguments \
+`execv` family: takes a vector of arguments
+- `l`/`v` just takes in a file name, searches PATH
+- `p` takes the input path to find the binary
+- `e` takes an array of environment variables
