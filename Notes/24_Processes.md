@@ -47,3 +47,11 @@ __wait()__ retrieves a child's exit status
 - `l`/`v` just takes in a file name, searches PATH
 - `p` takes the input path to find the binary
 - `e` takes an array of environment variables
+
+## Dangerous Process Things
+
+__Orphan__ - a child process with no parent process waiting on it (parent process has terminated before waiting)
+
+__Zombie__ - a dead child process (terminated) that hasn't been waited on yet
+
+__Bomb__ - excessive or uncontrollable forking
