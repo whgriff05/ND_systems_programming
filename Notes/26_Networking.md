@@ -21,7 +21,7 @@ http://xavier.h4x0r.space:9234/cgi-bin/hello.sh?name=pnutzh4x0r
 "/cgi-bin/hello.sh" - __path resource__ \
 "?name=pnutzh4x0r" - __query string__
 
-## Sockets + Echo Client
+## Sockets - Client
 
 __Client__
 - `getaddrinfo()` - talks to DNS
@@ -30,4 +30,25 @@ __Client__
 - __write__ (in some function) - send message to the server
 - __read__ (in some function) - receive message from the server
 - __close__ (in some function) - shut down and clean up connection with the server
+
+## HTTP Client
+
+In a HTTP request, they use DOS line endings: `\r\n`
+
+To send a __GET__ request:
+
+`GET /PATH HTTP/1.0` \
+`Host: <domain name>` \
+`User-Agent: <program/version>`
+`<blank line>`
+
+The server returns:
+
+`HTTP/1.0 200 OK` \
+`Content-Length: <length of response>` \
+`<other headers>` \
+`<blank line>` \
+`<response body>`
+
+
 
