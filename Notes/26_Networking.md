@@ -50,5 +50,12 @@ The server returns:
 `<blank line>` \
 `<response body>`
 
+## HTTP Server
 
-
+- `getaddrinfo()` - talks to DNS
+- `socket()` - creates a network socket to the server
+- `bind()` - bind the server to a port
+- `listen()` - open the server for connections
+- `accept()` - take a client connection and do something with it (accept returns a __client socket__) (typically fork to do something with client and keep listening/accepting for new clients)
+- __read/write__
+- __close__
